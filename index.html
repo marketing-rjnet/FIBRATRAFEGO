@@ -23,7 +23,7 @@
   --maxw:1240px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
 body{
   background:var(--paper);color:var(--ink);
   font-family:"Inter Tight",system-ui,sans-serif;
@@ -158,7 +158,7 @@ nav.anchors a:hover::after{width:100%}
 }
 
 /* casa conectada / assinatura visual */
-.hero-visual{position:relative}
+.hero-visual{position:relative;overflow:hidden}
 .hero-visual picture{display:block}
 .hero-visual img{
   width:112%;max-width:none;height:auto;
