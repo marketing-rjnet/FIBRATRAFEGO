@@ -152,13 +152,11 @@ nav.anchors a:hover::after{width:100%}
   .hero-grid{grid-template-columns:1fr}
   .hero-visual{order:-1;margin-inline:calc(var(--pad) * -1);margin-bottom:8px}
   .hero-visual img{width:100%;margin-left:0}
-  .hero-visual .badge{left:var(--pad);bottom:2%}
   .hero-facts{grid-template-columns:1fr;gap:10px}
 }
 @media(max-width:560px){
   .hero{padding-top:104px}
   .hero-visual img{width:118%;margin-left:-9%}
-  .hero-visual .badge{font-size:9.5px;padding:8px 11px;left:var(--pad);bottom:0}
 }
 
 /* casa conectada / assinatura visual */
@@ -177,6 +175,12 @@ nav.anchors a:hover::after{width:100%}
   padding:10px 14px;white-space:nowrap;
 }
 .hero-visual .badge span{color:var(--yellow)}
+@media(max-width:980px){
+  .hero-visual .badge{left:50%;transform:translateX(-50%);bottom:2%}
+}
+@media(max-width:560px){
+  .hero-visual .badge{font-size:9.5px;padding:8px 11px;left:50%;transform:translateX(-50%);bottom:0}
+}
 
 /* ---------- planos ---------- */
 .plans{background:var(--paper)}
@@ -387,7 +391,7 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
              alt="Corte de uma casa conectada: família assistindo TV na sala, jogos no quarto, home office e varanda, todos ligados pela rede RJNET"
              fetchpriority="high" decoding="async">
       </picture>
-      <div class="badge">Wi-Fi Mesh <span>●</span> sinal em todos os ambientes</div>
+      <div class="badge">Internet até 1 Gb <span>●</span> Wi-Fi Mesh</div>
     </div>
   </div>
 
