@@ -107,7 +107,7 @@ nav.anchors a:hover::after{width:100%}
 /* ---------- hero ---------- */
 .hero{padding-top:clamp(120px,15vw,168px);padding-bottom:clamp(56px,7vw,96px);position:relative}
 .hero-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:clamp(24px,3.5vw,52px);align-items:center}
-.hero h1{font-size:clamp(40px,6.6vw,84px)}
+.hero h1{font-size:clamp(34px,4.4vw,58px)}
 .hero h1 em{font-style:normal;position:relative;white-space:nowrap}
 .hero h1 em::after{
   content:"";position:absolute;left:0;right:0;bottom:.1em;height:.13em;background:var(--yellow);z-index:-1;
@@ -183,9 +183,9 @@ nav.anchors a:hover::after{width:100%}
 .plan .price .per{font-size:14px;color:var(--muted)}
 .plan .btn{margin-top:18px}
 .plan .tag{
-  position:absolute;top:-1px;right:20px;background:var(--yellow);color:var(--ink);
+  position:absolute;top:-8px;right:20px;transform:translateY(-100%);background:var(--yellow);color:var(--ink);
   font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
-  padding:6px 10px;
+  padding:6px 10px;white-space:nowrap;
 }
 .plan--featured{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 .plan--featured .speed span,.plan--featured .spec,.plan--featured li,.plan--featured .price .cur,.plan--featured .price .per{color:var(--muted-dark)}
