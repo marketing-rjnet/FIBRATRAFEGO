@@ -23,13 +23,17 @@
   --maxw:1240px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+html{
+  scroll-behavior:smooth;-webkit-text-size-adjust:100%;
+  background:var(--paper);
+  overflow-x:hidden;overscroll-behavior-x:none;
+}
 body{
   background:var(--paper);color:var(--ink);
   font-family:"Inter Tight",system-ui,sans-serif;
   font-size:17px;line-height:1.55;
   -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
+  overflow-x:hidden;overscroll-behavior-x:none;
 }
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
