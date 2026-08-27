@@ -23,13 +23,17 @@
   --maxw:1240px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{
+  scroll-behavior:smooth;-webkit-text-size-adjust:100%;
+  background:var(--paper);
+  overflow-x:hidden;overscroll-behavior-x:none;
+}
 body{
   background:var(--paper);color:var(--ink);
   font-family:"Inter Tight",system-ui,sans-serif;
   font-size:17px;line-height:1.55;
   -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
+  overflow-x:hidden;overscroll-behavior-x:none;
 }
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
@@ -102,7 +106,28 @@ nav.anchors a::after{
 nav.anchors a:hover{color:var(--ink)}
 nav.anchors a:hover::after{width:100%}
 .header-cta{padding:13px 20px;font-size:12px}
-@media(max-width:900px){nav.anchors,.header-cta{display:none}}
+.menu-btn{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:38px;height:38px;border:none;background:none;cursor:pointer;padding:0;
+}
+.menu-btn span{width:100%;height:2px;background:var(--ink);transition:transform .3s cubic-bezier(.2,.7,.3,1),opacity .3s}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{
+  display:none;position:fixed;top:74px;left:0;right:0;z-index:59;
+  background:var(--paper);border-bottom:1px solid var(--line);
+  max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.2,.7,.3,1);
+}
+.mobile-menu.open{max-height:400px}
+.mobile-menu nav{display:flex;flex-direction:column;padding:8px var(--pad) 24px}
+.mobile-menu nav a{padding:14px 0;font-size:16px;color:var(--ink);border-bottom:1px solid var(--line)}
+.mobile-menu .btn{margin-top:18px}
+@media(max-width:900px){
+  nav.anchors,.header-cta{display:none}
+  .menu-btn{display:flex}
+  .mobile-menu{display:block}
+}
 
 /* ---------- hero ---------- */
 .hero{padding-top:clamp(120px,15vw,168px);padding-bottom:clamp(56px,7vw,96px);position:relative}
@@ -137,7 +162,7 @@ nav.anchors a:hover::after{width:100%}
 }
 
 /* casa conectada / assinatura visual */
-.hero-visual{position:relative}
+.hero-visual{position:relative;overflow:hidden}
 .hero-visual picture{display:block}
 .hero-visual img{
   width:112%;max-width:none;height:auto;
@@ -183,7 +208,7 @@ nav.anchors a:hover::after{width:100%}
 .plan .price .per{font-size:14px;color:var(--muted)}
 .plan .btn{margin-top:18px}
 .plan .tag{
-  position:absolute;top:-8px;right:20px;transform:translateY(-100%);background:var(--yellow);color:var(--ink);
+  position:absolute;top:-8px;left:50%;transform:translate(-50%,-100%);background:var(--yellow);color:var(--ink);
   font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
   padding:6px 10px;white-space:nowrap;
 }
@@ -326,6 +351,18 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
       <a href="#apps">Apps</a>
     </nav>
     <button class="btn btn--dark header-cta" data-wa="cobertura">Consultar cobertura</button>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav>
+      <a href="#planos">Planos</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#apps">Apps</a>
+      <button class="btn btn--dark btn--block" data-wa="cobertura">Consultar cobertura</button>
+    </nav>
   </div>
 </header>
 
@@ -660,6 +697,19 @@ document.querySelectorAll("[data-wa]").forEach(el => {
   });
 });
 
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const closeMenu = () => {
+  menuBtn.setAttribute("aria-expanded", "false");
+  mobileMenu.classList.remove("open");
+};
+menuBtn.addEventListener("click", () => {
+  const open = menuBtn.getAttribute("aria-expanded") === "true";
+  menuBtn.setAttribute("aria-expanded", String(!open));
+  mobileMenu.classList.toggle("open", !open);
+});
+mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+
 const header = document.getElementById("header");
 const sticky = document.getElementById("stickyCta");
 let last = 0;
@@ -667,6 +717,7 @@ const onScroll = () => {
   const y = window.scrollY;
   header.classList.toggle("stuck", y > 40);
   sticky.classList.toggle("show", y > window.innerHeight * .6);
+  if (Math.abs(y - last) > 4) closeMenu();
   last = y;
 };
 onScroll();
