@@ -219,7 +219,7 @@ nav.anchors a:hover::after{width:100%}
 .plan .price .cur{font-size:15px;color:var(--muted);font-weight:500}
 .plan .price .val{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 100;font-weight:700;font-size:34px;letter-spacing:-.02em}
 .plan .price .per{font-size:14px;color:var(--muted)}
-.plan .btn{margin-top:18px}
+.plan .btn{margin-top:18px;padding-inline:14px;gap:7px}
 .plan .tag{
   position:absolute;top:-8px;left:50%;transform:translate(-50%,-100%);background:var(--yellow);color:var(--ink);
   font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
@@ -337,7 +337,7 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
 }
 .sticky-cta.show{transform:translateY(0)}
 .sticky-cta .btn{padding:17px 20px}
-.btn-wa-icon{width:19px;height:19px;flex:none;fill:currentColor}
+.btn-wa{width:19px;height:19px;flex:none;object-fit:contain}
 @media(min-width:901px){.sticky-cta{display:none}}
 @media(max-width:900px){body{padding-bottom:0}}
 
@@ -366,7 +366,7 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
       <a href="#avaliacoes">Avaliações</a>
       <a href="#apps">Apps</a>
     </nav>
-    <button class="btn btn--dark header-cta" data-wa="cobertura">Consultar cobertura</button>
+    <button class="btn btn--dark header-cta" data-wa="cobertura"><img class="btn-wa" src="whatsapp-icon-white.png" alt="">Consultar cobertura</button>
     <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
@@ -377,7 +377,7 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
       <a href="#beneficios">Benefícios</a>
       <a href="#avaliacoes">Avaliações</a>
       <a href="#apps">Apps</a>
-      <button class="btn btn--dark btn--block" data-wa="cobertura">Consultar cobertura</button>
+      <button class="btn btn--dark btn--block" data-wa="cobertura"><img class="btn-wa" src="whatsapp-icon-white.png" alt="">Consultar cobertura</button>
     </nav>
   </div>
 </header>
@@ -390,7 +390,7 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
       <h1 class="display" style="margin-top:20px">Internet que<br>acompanha o<br><em>seu ritmo.</em></h1>
       <p class="lede">Fibra óptica RJNET com velocidade, estabilidade e planos para todos os momentos da sua casa.</p>
       <div class="hero-actions">
-        <button class="btn btn--primary" data-wa="cobertura">Consultar cobertura <span class="arrow">→</span></button>
+        <button class="btn btn--primary" data-wa="cobertura"><img class="btn-wa" src="whatsapp-icon-black.png" alt="">Consultar cobertura <span class="arrow">→</span></button>
         <a href="#planos" class="btn btn--ghost">Ver planos</a>
       </div>
       <p class="hero-note">Quer saber se a RJNET atende no seu endereço?</p>
@@ -586,7 +586,7 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
           <span class="tile">HUB Vantagens</span>
           <span class="tile tile--more">e outros</span>
         </div>
-        <button class="btn btn--dark" data-wa="yellow">Quero o pacote Yellow <span class="arrow">→</span></button>
+        <button class="btn btn--dark" data-wa="yellow"><img class="btn-wa" src="whatsapp-icon-white.png" alt="">Quero o pacote Yellow <span class="arrow">→</span></button>
       </div>
 
       <div class="pack pack--black">
@@ -606,7 +606,7 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
           <span class="tile">Queima Diária</span>
           <span class="tile">Kaspersky</span>
         </div>
-        <button class="btn btn--primary" data-wa="black">Quero o pacote Black <span class="arrow">→</span></button>
+        <button class="btn btn--primary" data-wa="black"><img class="btn-wa" src="whatsapp-icon-black.png" alt="">Quero o pacote Black <span class="arrow">→</span></button>
       </div>
     </div>
   </div>
@@ -623,7 +623,7 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
     <h2 class="display" style="margin-top:18px">Sua casa merece uma<br>internet <span>à altura.</span></h2>
     <p class="lede lede--dark">Escolha seu plano RJNET e consulte a disponibilidade para o seu endereço.</p>
     <div class="final-actions">
-      <button class="btn btn--primary" data-wa="cobertura">Consultar cobertura <span class="arrow">→</span></button>
+      <button class="btn btn--primary" data-wa="cobertura"><img class="btn-wa" src="whatsapp-icon-black.png" alt="">Consultar cobertura <span class="arrow">→</span></button>
       <a href="#planos" class="btn btn--ghost-dark">Ver planos</a>
     </div>
   </div>
@@ -664,7 +664,7 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
 <!-- ================= STICKY MOBILE ================= -->
 <div class="sticky-cta" id="stickyCta">
   <button class="btn btn--primary btn--block" data-wa="cobertura">
-    <svg class="btn-wa-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.71.45 3.38 1.3 4.85L2 22l5.36-1.4a9.9 9.9 0 0 0 4.68 1.19h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2zm0 1.67c2.28 0 4.43.89 6.04 2.5a8.49 8.49 0 0 1 2.5 6.04c0 4.71-3.83 8.54-8.55 8.54a8.5 8.5 0 0 1-4.32-1.18l-.31-.18-3.18.83.85-3.1-.2-.32a8.46 8.46 0 0 1-1.3-4.52c0-4.71 3.83-8.54 8.55-8.54zm-4.7 4.86c-.15 0-.4.06-.61.29-.21.23-.8.78-.8 1.9 0 1.12.82 2.2.93 2.35.11.15 1.61 2.57 3.98 3.5 1.96.77 2.36.62 2.79.58.42-.04 1.36-.55 1.55-1.09.19-.53.19-.99.13-1.09-.06-.09-.21-.15-.44-.26-.23-.11-1.36-.67-1.57-.75-.21-.08-.36-.11-.51.11-.15.23-.59.75-.72.9-.13.15-.26.17-.49.06-.23-.11-.96-.35-1.83-1.12-.68-.6-1.13-1.35-1.26-1.58-.13-.23-.01-.35.1-.46.1-.1.23-.26.34-.38.11-.13.15-.23.23-.38.08-.15.04-.29-.02-.4-.06-.11-.51-1.25-.72-1.7-.19-.45-.38-.39-.51-.4-.13-.01-.28-.01-.43-.01z"/></svg>
+    <img class="btn-wa" src="whatsapp-icon-black.png" alt="">
     Consultar cobertura
   </button>
 </div>
@@ -724,7 +724,7 @@ rail.innerHTML = PLANOS.filter(p => p.destaque).map(p => {
     <div class="price">
       <span class="cur">R$</span><span class="val">${p.preco}</span><span class="per">/mês</span>
     </div>
-    <a class="btn ${p.tag ? "btn--primary" : "btn--dark"} btn--block" href="${waLink(msg)}" target="_blank" rel="noopener">Quero esse plano</a>
+    <a class="btn ${p.tag ? "btn--primary" : "btn--dark"} btn--block" href="${waLink(msg)}" target="_blank" rel="noopener"><img class="btn-wa" src="whatsapp-icon-${p.tag ? "black" : "white"}.png" alt="">Quero esse plano</a>
   </article>`;
 }).join("");
 
