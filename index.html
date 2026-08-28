@@ -94,8 +94,8 @@ header{
 }
 header.stuck{background:rgba(247,245,239,.88);backdrop-filter:blur(14px);border-color:var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:24px;height:74px}
-.logo{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 118;font-weight:800;font-size:22px;letter-spacing:-.01em}
-.logo i{color:var(--yellow);font-style:normal}
+.logo{display:inline-flex;align-items:center;line-height:0}
+.logo img{height:58px;width:auto;display:block}
 nav.anchors{display:flex;gap:30px}
 nav.anchors a{
   font-size:14px;color:var(--muted);position:relative;padding-block:4px;transition:color .2s;
@@ -346,7 +346,9 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
 <!-- ================= HEADER ================= -->
 <header id="header">
   <div class="wrap bar">
-    <a href="#topo" class="logo">RJNET<i>.</i></a>
+    <a href="#topo" class="logo" aria-label="RJNET">
+      <img src="rjnet-logo.svg" alt="RJNET" width="1080" height="1080">
+    </a>
     <nav class="anchors">
       <a href="#planos">Planos</a>
       <a href="#beneficios">Benefícios</a>
@@ -583,7 +585,9 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a href="#topo" class="logo" style="color:var(--paper)">RJNET<i>.</i></a>
+        <a href="#topo" class="logo" aria-label="RJNET">
+          <img src="rjnet-logo.svg" alt="RJNET" width="1080" height="1080">
+        </a>
         <p style="margin-top:14px;max-width:34ch">Fibra óptica, entretenimento e atendimento local para a sua casa.</p>
       </div>
       <div>
