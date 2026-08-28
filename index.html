@@ -94,8 +94,8 @@ header{
 }
 header.stuck{background:rgba(247,245,239,.88);backdrop-filter:blur(14px);border-color:var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:24px;height:74px}
-.logo{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 118;font-weight:800;font-size:22px;letter-spacing:-.01em}
-.logo i{color:var(--yellow);font-style:normal}
+.logo{display:inline-flex;align-items:center;line-height:0}
+.logo svg{height:58px;width:auto;display:block}
 nav.anchors{display:flex;gap:30px}
 nav.anchors a{
   font-size:14px;color:var(--muted);position:relative;padding-block:4px;transition:color .2s;
@@ -346,7 +346,20 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
 <!-- ================= HEADER ================= -->
 <header id="header">
   <div class="wrap bar">
-    <a href="#topo" class="logo">RJNET<i>.</i></a>
+    <a href="#topo" class="logo" aria-label="RJNET">
+      <svg viewBox="0 0 512 512" role="img" aria-hidden="true">
+        <defs>
+          <linearGradient id="rjGradH" x1="50" y1="475" x2="475" y2="50" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#FFC72C"/><stop offset=".5" stop-color="#F07C1E"/><stop offset="1" stop-color="#E32029"/>
+          </linearGradient>
+        </defs>
+        <path fill="url(#rjGradH)" d="M72,296A258,258 0 0 1 300,52A258,258 0 0 1 460,168A178,178 0 0 0 300,102A178,178 0 0 0 108,296Z"/>
+        <path fill="url(#rjGradH)" d="M440,216A258,258 0 0 1 212,460A258,258 0 0 1 52,344A178,178 0 0 0 212,410A178,178 0 0 0 404,216Z"/>
+        <path fill="currentColor" d="M300,102A52,142 -42 0 1 404,216A52,142 -42 0 1 300,102Z"/>
+        <path fill="currentColor" d="M212,410A52,142 -42 0 1 108,296A52,142 -42 0 1 212,410Z"/>
+        <text x="256" y="288" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="800" font-size="76" fill="currentColor" letter-spacing="-1">RJNET</text>
+      </svg>
+    </a>
     <nav class="anchors">
       <a href="#planos">Planos</a>
       <a href="#beneficios">Benefícios</a>
@@ -583,7 +596,20 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a href="#topo" class="logo" style="color:var(--paper)">RJNET<i>.</i></a>
+        <a href="#topo" class="logo" style="color:var(--paper)" aria-label="RJNET">
+          <svg viewBox="0 0 512 512" role="img" aria-hidden="true">
+            <defs>
+              <linearGradient id="rjGradF" x1="50" y1="475" x2="475" y2="50" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#FFC72C"/><stop offset=".5" stop-color="#F07C1E"/><stop offset="1" stop-color="#E32029"/>
+              </linearGradient>
+            </defs>
+            <path fill="url(#rjGradF)" d="M72,296A258,258 0 0 1 300,52A258,258 0 0 1 460,168A178,178 0 0 0 300,102A178,178 0 0 0 108,296Z"/>
+            <path fill="url(#rjGradF)" d="M440,216A258,258 0 0 1 212,460A258,258 0 0 1 52,344A178,178 0 0 0 212,410A178,178 0 0 0 404,216Z"/>
+            <path fill="currentColor" d="M300,102A52,142 -42 0 1 404,216A52,142 -42 0 1 300,102Z"/>
+            <path fill="currentColor" d="M212,410A52,142 -42 0 1 108,296A52,142 -42 0 1 212,410Z"/>
+            <text x="256" y="288" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="800" font-size="76" fill="currentColor" letter-spacing="-1">RJNET</text>
+          </svg>
+        </a>
         <p style="margin-top:14px;max-width:34ch">Fibra óptica, entretenimento e atendimento local para a sua casa.</p>
       </div>
       <div>
