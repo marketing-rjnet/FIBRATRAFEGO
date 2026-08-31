@@ -239,6 +239,10 @@ nav.anchors a:hover::after{width:100%}
     display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;
     margin-inline:calc(var(--pad) * -1);padding-inline:var(--pad);padding-bottom:8px;
     scrollbar-width:none;
+    /* overflow-x:auto makes overflow-y compute to auto too, clipping the
+       ".tag" badge that sits above the card via negative top + translateY.
+       Add top padding for it and pull the rail back up by the same amount. */
+    padding-top:40px;margin-top:-40px;
   }
   .plans-rail::-webkit-scrollbar{display:none}
   .plan{flex:0 0 78%;scroll-snap-align:center}
