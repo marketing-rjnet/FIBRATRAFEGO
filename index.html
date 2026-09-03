@@ -357,6 +357,12 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
   .hero h1 em::after{transform:scaleX(1)}
 }
 </style>
+<!-- RJNET Gestão — SDK de rastreamento da LP (roda em segundo plano, LP segue independente) -->
+<script src="https://rjnet-gestao-eventos-roan.vercel.app/rjnet-lp.js"
+  data-lp="fibra"
+  data-supabase-url="https://scwnufvamtspfwffeajd.supabase.co"
+  data-anon-key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNjd251ZnZhbXRzcGZ3ZmZlYWpkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwOTQxMTEsImV4cCI6MjA5NjY3MDExMX0._EGUwYaaxXR1MziCu4l-beR8M9f6KOlOXjfvgqNUkLo"
+  defer></script>
 </head>
 <body>
 
@@ -372,7 +378,7 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
       <a href="#avaliacoes">Avaliações</a>
       <a href="#apps">Apps</a>
     </nav>
-    <button class="btn btn--dark header-cta" data-wa="cobertura"><img class="btn-wa" src="whatsapp-icon-white.png" alt="">Consultar cobertura</button>
+    <a class="btn btn--dark header-cta" href="#" data-wa="cobertura" data-rjnet-whatsapp="header_cobertura" target="_blank" rel="noopener"><img class="btn-wa" src="whatsapp-icon-white.png" alt="">Consultar cobertura</a>
     <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
@@ -383,7 +389,7 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
       <a href="#beneficios">Benefícios</a>
       <a href="#avaliacoes">Avaliações</a>
       <a href="#apps">Apps</a>
-      <button class="btn btn--dark btn--block" data-wa="cobertura"><img class="btn-wa" src="whatsapp-icon-white.png" alt="">Consultar cobertura</button>
+      <a class="btn btn--dark btn--block" href="#" data-wa="cobertura" data-rjnet-whatsapp="menu_cobertura" target="_blank" rel="noopener"><img class="btn-wa" src="whatsapp-icon-white.png" alt="">Consultar cobertura</a>
     </nav>
   </div>
 </header>
@@ -397,8 +403,8 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
       <p class="lede">Fibra óptica RJNET com velocidade, estabilidade e planos para todos os momentos da sua casa.</p>
       <p class="hero-note">Quer saber se a RJNET atende no seu endereço?</p>
       <div class="hero-actions">
-        <button class="btn btn--primary" data-wa="cobertura"><img class="btn-wa" src="whatsapp-icon-black.png" alt="">Consultar cobertura <span class="arrow">→</span></button>
-        <a href="#planos" class="btn btn--ghost">Ver planos</a>
+        <a class="btn btn--primary" href="#" data-wa="cobertura" data-rjnet-whatsapp="hero_cobertura" target="_blank" rel="noopener"><img class="btn-wa" src="whatsapp-icon-black.png" alt="">Consultar cobertura <span class="arrow">→</span></a>
+        <a href="#planos" class="btn btn--ghost" data-rjnet-cta="hero_ver_planos">Ver planos</a>
       </div>
     </div>
 
@@ -537,7 +543,7 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
     </div>
 
     <div class="why-actions">
-      <button class="btn btn--primary" data-wa="cobertura"><img class="btn-wa" src="whatsapp-icon-black.png" alt="">Consultar cobertura <span class="arrow">→</span></button>
+      <a class="btn btn--primary" href="#" data-wa="cobertura" data-rjnet-whatsapp="beneficios_cobertura" target="_blank" rel="noopener"><img class="btn-wa" src="whatsapp-icon-black.png" alt="">Consultar cobertura <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -568,7 +574,7 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
     <div class="rev-grid rv" id="revGrid"></div>
 
     <div class="reviews-actions">
-      <button class="btn btn--primary" data-wa="cobertura"><img class="btn-wa" src="whatsapp-icon-black.png" alt="">Consultar cobertura <span class="arrow">→</span></button>
+      <a class="btn btn--primary" href="#" data-wa="cobertura" data-rjnet-whatsapp="avaliacoes_cobertura" target="_blank" rel="noopener"><img class="btn-wa" src="whatsapp-icon-black.png" alt="">Consultar cobertura <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -600,7 +606,7 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
           <span class="tile">HUB Vantagens</span>
           <span class="tile tile--more">e outros</span>
         </div>
-        <button class="btn btn--dark" data-wa="yellow"><img class="btn-wa" src="whatsapp-icon-white.png" alt="">Quero o pacote Yellow <span class="arrow">→</span></button>
+        <a class="btn btn--dark" href="#" data-wa="yellow" data-rjnet-whatsapp="apps_yellow" target="_blank" rel="noopener"><img class="btn-wa" src="whatsapp-icon-white.png" alt="">Quero o pacote Yellow <span class="arrow">→</span></a>
       </div>
 
       <div class="pack pack--black">
@@ -620,7 +626,7 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
           <span class="tile">Queima Diária</span>
           <span class="tile">Kaspersky</span>
         </div>
-        <button class="btn btn--primary" data-wa="black"><img class="btn-wa" src="whatsapp-icon-black.png" alt="">Quero o pacote Black <span class="arrow">→</span></button>
+        <a class="btn btn--primary" href="#" data-wa="black" data-rjnet-whatsapp="apps_black" target="_blank" rel="noopener"><img class="btn-wa" src="whatsapp-icon-black.png" alt="">Quero o pacote Black <span class="arrow">→</span></a>
       </div>
     </div>
   </div>
@@ -637,8 +643,8 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
     <h2 class="display" style="margin-top:18px">Sua casa merece uma<br>internet <span>à altura.</span></h2>
     <p class="lede lede--dark">Escolha seu plano RJNET e consulte a disponibilidade para o seu endereço.</p>
     <div class="final-actions">
-      <button class="btn btn--primary" data-wa="cobertura"><img class="btn-wa" src="whatsapp-icon-black.png" alt="">Consultar cobertura <span class="arrow">→</span></button>
-      <a href="#planos" class="btn btn--ghost-dark">Ver planos</a>
+      <a class="btn btn--primary" href="#" data-wa="cobertura" data-rjnet-whatsapp="final_cobertura" target="_blank" rel="noopener"><img class="btn-wa" src="whatsapp-icon-black.png" alt="">Consultar cobertura <span class="arrow">→</span></a>
+      <a href="#planos" class="btn btn--ghost-dark" data-rjnet-cta="final_ver_planos">Ver planos</a>
     </div>
   </div>
 </section>
@@ -662,7 +668,7 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
       </div>
       <div>
         <h4>Contato</h4>
-        <a href="#" data-wa="cobertura">WhatsApp (24) 3421-2021</a>
+        <a href="#" data-wa="cobertura" data-rjnet-whatsapp="footer_whatsapp" target="_blank" rel="noopener">WhatsApp (24) 3421-2021</a>
         <a href="tel:+552434212020">Telefax (24) 3421-2020</a>
         <a href="mailto:atendimento@netangra.com.br">atendimento@netangra.com.br</a>
         <p>Rua Comandante Castelo Branco, 960<br>Balneário · Angra dos Reis · RJ<br>CEP 23.906-120</p>
@@ -677,10 +683,10 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
 
 <!-- ================= STICKY MOBILE ================= -->
 <div class="sticky-cta" id="stickyCta">
-  <button class="btn btn--primary btn--block" data-wa="cobertura">
+  <a class="btn btn--primary btn--block" href="#" data-wa="cobertura" data-rjnet-whatsapp="sticky_cobertura" target="_blank" rel="noopener">
     <img class="btn-wa" src="whatsapp-icon-black.png" alt="">
     Consultar cobertura
-  </button>
+  </a>
 </div>
 
 <script>
@@ -722,6 +728,8 @@ const REVIEWS = [
 
 /* ========================= render ========================= */
 const waLink = txt => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(txt)}`;
+/* id de rastreamento do plano no RJNET Gestão: plano_420_mega, plano_1_giga */
+const waId = p => `plano_${p.down}_${p.unit}`.toLowerCase();
 
 const rail = document.getElementById("plansRail");
 rail.innerHTML = PLANOS.filter(p => p.destaque).map(p => {
@@ -738,7 +746,7 @@ rail.innerHTML = PLANOS.filter(p => p.destaque).map(p => {
     <div class="price">
       <span class="cur">R$</span><span class="val">${p.preco}</span><span class="per">/mês</span>
     </div>
-    <a class="btn ${p.tag ? "btn--primary" : "btn--dark"} btn--block" href="${waLink(msg)}" target="_blank" rel="noopener"><img class="btn-wa" src="whatsapp-icon-${p.tag ? "black" : "white"}.png" alt="">Quero esse plano</a>
+    <a class="btn ${p.tag ? "btn--primary" : "btn--dark"} btn--block" href="${waLink(msg)}" data-rjnet-whatsapp="${waId(p)}" target="_blank" rel="noopener"><img class="btn-wa" src="whatsapp-icon-${p.tag ? "black" : "white"}.png" alt="">Quero esse plano</a>
   </article>`;
 }).join("");
 
@@ -748,7 +756,7 @@ document.getElementById("plansAlt").innerHTML =
   entrada.map(p => {
     const nome = `${p.down} ${p.unit}`;
     const msg = `Olá! Quero contratar o plano de ${nome} da RJNET (R$ ${p.preco}/mês). Pode verificar a disponibilidade no meu endereço?`;
-    return `<a href="${waLink(msg)}" target="_blank" rel="noopener"><b>${nome}</b> · R$ ${p.preco}/mês</a>`;
+    return `<a href="${waLink(msg)}" data-rjnet-whatsapp="${waId(p)}" target="_blank" rel="noopener"><b>${nome}</b> · R$ ${p.preco}/mês</a>`;
   }).join("");
 
 const star = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg>`;
@@ -763,11 +771,11 @@ document.getElementById("revGrid").innerHTML = REVIEWS.map(r => `
   </article>`).join("");
 
 /* ========================= interações ========================= */
+/* Links de WhatsApp recebem o href real com a mensagem pré-preenchida.
+   O SDK do RJNET Gestão (data-rjnet-whatsapp) rastreia o clique e segue este href
+   quando não há número configurado no painel — e o link funciona mesmo sem o SDK. */
 document.querySelectorAll("[data-wa]").forEach(el => {
-  el.addEventListener("click", e => {
-    e.preventDefault();
-    window.open(waLink(MSG[el.dataset.wa]), "_blank", "noopener");
-  });
+  el.href = waLink(MSG[el.dataset.wa]);
 });
 
 const menuBtn = document.getElementById("menuBtn");
