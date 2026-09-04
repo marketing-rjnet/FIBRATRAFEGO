@@ -280,7 +280,7 @@ nav.anchors a:hover::after{width:100%}
   position:relative;background:var(--ink);overflow:hidden;
   display:flex;align-items:center;justify-content:center;padding:clamp(24px,3vw,40px);
 }
-.addon-visual svg{width:100%;max-width:340px;height:auto;display:block}
+.addon-visual img{width:100%;max-width:340px;height:auto;max-height:420px;object-fit:contain;display:block}
 .addon-visual .badge{
   position:absolute;left:0;bottom:0;background:var(--yellow);color:var(--ink);
   font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
@@ -290,7 +290,7 @@ nav.anchors a:hover::after{width:100%}
 @media(max-width:900px){
   .addon-card{grid-template-columns:1fr}
   .addon-visual{order:-1;min-height:250px;padding:20px}
-  .addon-visual svg{max-width:260px}
+  .addon-visual img{max-width:260px;max-height:230px}
   .addon-copy h3{max-width:none}
 }
 @media(max-width:560px){
@@ -298,7 +298,7 @@ nav.anchors a:hover::after{width:100%}
   .addon-foot{flex-direction:column;align-items:stretch}
   .addon-foot .btn{width:100%}
   .addon-visual{min-height:220px}
-  .addon-visual svg{max-width:220px}
+  .addon-visual img{max-width:220px;max-height:200px}
   .addon-visual .badge{font-size:9.5px;padding:8px 11px}
 }
 
@@ -558,73 +558,10 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
       </div>
 
       <div class="addon-visual">
-        <svg viewBox="0 0 360 380" role="img" aria-label="Roteador Wi-Fi Mesh RJNET">
-          <defs>
-            <radialGradient id="mGlow" cx="50%" cy="58%" r="52%">
-              <stop offset="0" stop-color="#FFCB00" stop-opacity=".2"/>
-              <stop offset="1" stop-color="#FFCB00" stop-opacity="0"/>
-            </radialGradient>
-            <linearGradient id="mBody" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#FFFFFF"/>
-              <stop offset=".32" stop-color="#F3F1EA"/>
-              <stop offset=".72" stop-color="#D6D2C6"/>
-              <stop offset="1" stop-color="#A9A395"/>
-            </linearGradient>
-            <linearGradient id="mTop" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#FFFFFF"/>
-              <stop offset="1" stop-color="#D3CFC3"/>
-            </linearGradient>
-            <linearGradient id="mVent" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#2A2A26"/>
-              <stop offset="1" stop-color="#0A0A0A"/>
-            </linearGradient>
-            <linearGradient id="mShine" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
-              <stop offset=".2" stop-color="#FFFFFF" stop-opacity=".9"/>
-              <stop offset=".8" stop-color="#FFFFFF" stop-opacity=".9"/>
-              <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
-            </linearGradient>
-            <filter id="mShadow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="12"/></filter>
-            <filter id="mLed" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="3"/></filter>
-          </defs>
-
-          <!-- halo -->
-          <circle cx="180" cy="200" r="175" fill="url(#mGlow)"/>
-
-          <!-- ondas de sinal -->
-          <g fill="none" stroke="#FFCB00" stroke-width="2" stroke-linecap="round">
-            <path d="M262 92 a30 30 0 0 1 0 44"/>
-            <path d="M278 74 a54 54 0 0 1 0 80" opacity=".55"/>
-            <path d="M294 56 a78 78 0 0 1 0 116" opacity=".26"/>
-          </g>
-
-          <!-- sombra no piso -->
-          <ellipse cx="180" cy="318" rx="90" ry="15" fill="#000" opacity=".7" filter="url(#mShadow)"/>
-
-          <!-- corpo -->
-          <path d="M112 84 v202 a68 26 0 0 0 136 0 v-202 z" fill="url(#mBody)"/>
-          <!-- brilho lateral -->
-          <rect x="121" y="96" width="7" height="184" rx="3.5" fill="url(#mShine)" opacity=".85"/>
-          <!-- sombra de contato da base -->
-          <path d="M112 286 a68 26 0 0 0 136 0" fill="none" stroke="#000" stroke-opacity=".18" stroke-width="10" stroke-linecap="round"/>
-
-          <!-- LED de status -->
-          <path d="M126 292 a68 26 0 0 0 108 0" fill="none" stroke="#FFCB00" stroke-width="4" opacity=".75" filter="url(#mLed)"/>
-          <path d="M126 292 a68 26 0 0 0 108 0" fill="none" stroke="#FFCB00" stroke-width="1.6"/>
-
-          <!-- tampa -->
-          <ellipse cx="180" cy="84" rx="68" ry="26" fill="url(#mTop)"/>
-          <ellipse cx="180" cy="84" rx="68" ry="26" fill="none" stroke="#FFFFFF" stroke-opacity=".6" stroke-width="1"/>
-          <!-- grade de ventilação -->
-          <ellipse cx="180" cy="84" rx="53" ry="19.5" fill="url(#mVent)"/>
-          <g fill="none" stroke="#F7F5EF" stroke-opacity=".14" stroke-width="1">
-            <ellipse cx="180" cy="84" rx="43" ry="15.6"/>
-            <ellipse cx="180" cy="84" rx="33" ry="11.8"/>
-            <ellipse cx="180" cy="84" rx="23" ry="8.1"/>
-            <ellipse cx="180" cy="84" rx="13" ry="4.4"/>
-          </g>
-          <ellipse cx="180" cy="84" rx="53" ry="19.5" fill="none" stroke="#000" stroke-opacity=".35" stroke-width="1.2"/>
-        </svg>
+        <!-- EQUIPAMENTO: para trocar, substitua o arquivo mesh-roteador.svg ou aponte o src
+             para outra imagem (ex.: mesh-roteador.png). Recomendado: PNG/WebP com fundo
+             transparente, ~800px de largura, pois o painel de fundo é preto. -->
+        <img src="mesh-roteador.svg" width="360" height="380" alt="Roteador Wi-Fi Mesh RJNET" loading="lazy" decoding="async">
         <div class="badge">Equipamento incluso <span>●</span> Instalação RJNET</div>
       </div>
     </div>
