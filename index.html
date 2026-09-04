@@ -249,6 +249,59 @@ nav.anchors a:hover::after{width:100%}
   .rail-hint{display:block;margin-top:14px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 }
 
+/* ---------- adicional wi-fi mesh ---------- */
+/* Encosta no bloco de planos: anula o respiro da seção anterior e usa um gap menor,
+   para ler como um upgrade do plano e não como uma seção nova. */
+.addon{padding-top:0;margin-top:calc(clamp(36px,4.5vw,60px) - clamp(72px,10vw,132px))}
+.addon-card{
+  display:grid;grid-template-columns:1.15fr .85fr;
+  background:var(--paper-2);border:1px solid var(--line);border-radius:3px;overflow:hidden;
+  transition:border-color .3s,box-shadow .3s;
+}
+.addon-card:hover{border-color:rgba(10,10,10,.28);box-shadow:0 20px 40px -28px rgba(10,10,10,.5)}
+.addon-copy{padding:clamp(28px,3.4vw,46px);display:flex;flex-direction:column;justify-content:center}
+.addon-copy .eyebrow{display:block}
+.addon-copy h3{margin-top:16px;font-size:clamp(26px,2.9vw,38px);max-width:16ch}
+.addon-copy .sub{margin-top:14px;font-size:16.5px;color:var(--muted);max-width:46ch}
+.addon-copy .sub b{color:var(--ink);font-weight:600;white-space:nowrap}
+.addon-copy ul{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:9px}
+.addon-copy li{font-size:15px;display:flex;gap:10px;align-items:flex-start;color:var(--muted)}
+.addon-copy li::before{content:"";width:6px;height:6px;background:var(--yellow);margin-top:8px;flex:none}
+.addon-foot{
+  margin-top:26px;padding-top:22px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 28px;
+}
+.addon-price .price{display:flex;align-items:baseline;gap:4px}
+.addon-price .cur{font-size:15px;color:var(--muted);font-weight:500}
+.addon-price .val{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 100;font-weight:700;font-size:34px;letter-spacing:-.02em}
+.addon-price .per{font-size:14px;color:var(--muted)}
+.addon-price .any{display:block;margin-top:4px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.addon-visual{
+  position:relative;background:var(--ink);overflow:hidden;
+  display:flex;align-items:center;justify-content:center;padding:clamp(24px,3vw,40px);
+}
+.addon-visual svg{width:100%;max-width:340px;height:auto;display:block}
+.addon-visual .badge{
+  position:absolute;left:0;bottom:0;background:var(--yellow);color:var(--ink);
+  font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  padding:10px 14px;white-space:nowrap;
+}
+.addon-visual .badge span{color:var(--ink);opacity:.55}
+@media(max-width:900px){
+  .addon-card{grid-template-columns:1fr}
+  .addon-visual{order:-1;min-height:250px;padding:20px}
+  .addon-visual svg{max-width:260px}
+  .addon-copy h3{max-width:none}
+}
+@media(max-width:560px){
+  .addon-copy{padding:26px 22px 24px}
+  .addon-foot{flex-direction:column;align-items:stretch}
+  .addon-foot .btn{width:100%}
+  .addon-visual{min-height:220px}
+  .addon-visual svg{max-width:220px}
+  .addon-visual .badge{font-size:9.5px;padding:8px 11px}
+}
+
 /* ---------- diferenciais ---------- */
 .why{background:var(--ink);color:var(--paper)}
 .why .sec-title{color:var(--paper)}
@@ -481,6 +534,103 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
   </div>
 </section>
 
+<!-- ================= ADICIONAL WI-FI MESH ================= -->
+<section class="addon" id="mesh" aria-labelledby="meshTitle">
+  <div class="wrap">
+    <div class="addon-card rv">
+      <div class="addon-copy">
+        <span class="eyebrow">Adicional <span class="dot">●</span> Wi-Fi Mesh</span>
+        <h3 class="display" id="meshTitle">Seu Wi-Fi pode chegar ainda mais longe.</h3>
+        <p class="sub">Adicione Wi-Fi Mesh ao seu plano por apenas <b>+R$ 29,90/mês</b>.</p>
+        <ul>
+          <li>Maior cobertura do sinal Wi-Fi</li>
+          <li>Mais estabilidade para seus dispositivos</li>
+          <li>Ideal para ambientes maiores e áreas onde o sinal costuma ficar fraco</li>
+          <li>Equipamento Mesh incluso na contratação do adicional</li>
+        </ul>
+        <div class="addon-foot">
+          <div class="addon-price">
+            <div class="price"><span class="cur">+R$</span><span class="val">29,90</span><span class="per">/mês</span></div>
+            <span class="any">Em qualquer plano</span>
+          </div>
+          <a class="btn btn--dark" href="#" data-wa="mesh" data-rjnet-whatsapp="planos_mesh" target="_blank" rel="noopener"><img class="btn-wa" src="whatsapp-icon-white.png" alt="">Adicionar Wi-Fi Mesh <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <div class="addon-visual">
+        <svg viewBox="0 0 360 380" role="img" aria-label="Roteador Wi-Fi Mesh RJNET">
+          <defs>
+            <radialGradient id="mGlow" cx="50%" cy="58%" r="52%">
+              <stop offset="0" stop-color="#FFCB00" stop-opacity=".2"/>
+              <stop offset="1" stop-color="#FFCB00" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="mBody" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#FFFFFF"/>
+              <stop offset=".32" stop-color="#F3F1EA"/>
+              <stop offset=".72" stop-color="#D6D2C6"/>
+              <stop offset="1" stop-color="#A9A395"/>
+            </linearGradient>
+            <linearGradient id="mTop" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FFFFFF"/>
+              <stop offset="1" stop-color="#D3CFC3"/>
+            </linearGradient>
+            <linearGradient id="mVent" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#2A2A26"/>
+              <stop offset="1" stop-color="#0A0A0A"/>
+            </linearGradient>
+            <linearGradient id="mShine" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+              <stop offset=".2" stop-color="#FFFFFF" stop-opacity=".9"/>
+              <stop offset=".8" stop-color="#FFFFFF" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+            </linearGradient>
+            <filter id="mShadow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="12"/></filter>
+            <filter id="mLed" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="3"/></filter>
+          </defs>
+
+          <!-- halo -->
+          <circle cx="180" cy="200" r="175" fill="url(#mGlow)"/>
+
+          <!-- ondas de sinal -->
+          <g fill="none" stroke="#FFCB00" stroke-width="2" stroke-linecap="round">
+            <path d="M262 92 a30 30 0 0 1 0 44"/>
+            <path d="M278 74 a54 54 0 0 1 0 80" opacity=".55"/>
+            <path d="M294 56 a78 78 0 0 1 0 116" opacity=".26"/>
+          </g>
+
+          <!-- sombra no piso -->
+          <ellipse cx="180" cy="318" rx="90" ry="15" fill="#000" opacity=".7" filter="url(#mShadow)"/>
+
+          <!-- corpo -->
+          <path d="M112 84 v202 a68 26 0 0 0 136 0 v-202 z" fill="url(#mBody)"/>
+          <!-- brilho lateral -->
+          <rect x="121" y="96" width="7" height="184" rx="3.5" fill="url(#mShine)" opacity=".85"/>
+          <!-- sombra de contato da base -->
+          <path d="M112 286 a68 26 0 0 0 136 0" fill="none" stroke="#000" stroke-opacity=".18" stroke-width="10" stroke-linecap="round"/>
+
+          <!-- LED de status -->
+          <path d="M126 292 a68 26 0 0 0 108 0" fill="none" stroke="#FFCB00" stroke-width="4" opacity=".75" filter="url(#mLed)"/>
+          <path d="M126 292 a68 26 0 0 0 108 0" fill="none" stroke="#FFCB00" stroke-width="1.6"/>
+
+          <!-- tampa -->
+          <ellipse cx="180" cy="84" rx="68" ry="26" fill="url(#mTop)"/>
+          <ellipse cx="180" cy="84" rx="68" ry="26" fill="none" stroke="#FFFFFF" stroke-opacity=".6" stroke-width="1"/>
+          <!-- grade de ventilação -->
+          <ellipse cx="180" cy="84" rx="53" ry="19.5" fill="url(#mVent)"/>
+          <g fill="none" stroke="#F7F5EF" stroke-opacity=".14" stroke-width="1">
+            <ellipse cx="180" cy="84" rx="43" ry="15.6"/>
+            <ellipse cx="180" cy="84" rx="33" ry="11.8"/>
+            <ellipse cx="180" cy="84" rx="23" ry="8.1"/>
+            <ellipse cx="180" cy="84" rx="13" ry="4.4"/>
+          </g>
+          <ellipse cx="180" cy="84" rx="53" ry="19.5" fill="none" stroke="#000" stroke-opacity=".35" stroke-width="1.2"/>
+        </svg>
+        <div class="badge">Equipamento incluso <span>●</span> Instalação RJNET</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= DIFERENCIAIS ================= -->
 <section class="why" id="beneficios">
   <div class="wrap">
@@ -696,7 +846,8 @@ const WHATSAPP = "552434212021"; // 55 + DDD 24 + 3421-2021
 const MSG = {
   cobertura: "Olá! Quero saber se a RJNET atende no meu endereço.",
   yellow: "Olá! Quero contratar o pacote Apps Yellow da RJNET (R$ 15,00/mês).",
-  black: "Olá! Quero contratar o pacote Apps Black da RJNET (R$ 30,00/mês)."
+  black: "Olá! Quero contratar o pacote Apps Black da RJNET (R$ 30,00/mês).",
+  mesh: "Olá! Quero adicionar o Wi-Fi Mesh (+R$ 29,90/mês) ao meu plano RJNET."
 };
 
 /* destaque:false -> plano de entrada, exibido como linha discreta abaixo dos cards */
