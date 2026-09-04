@@ -249,6 +249,59 @@ nav.anchors a:hover::after{width:100%}
   .rail-hint{display:block;margin-top:14px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 }
 
+/* ---------- adicional wi-fi mesh ---------- */
+/* Encosta no bloco de planos: anula o respiro da seção anterior e usa um gap menor,
+   para ler como um upgrade do plano e não como uma seção nova. */
+.addon{padding-top:0;margin-top:calc(clamp(36px,4.5vw,60px) - clamp(72px,10vw,132px))}
+.addon-card{
+  display:grid;grid-template-columns:1.15fr .85fr;
+  background:var(--paper-2);border:1px solid var(--line);border-radius:3px;overflow:hidden;
+  transition:border-color .3s,box-shadow .3s;
+}
+.addon-card:hover{border-color:rgba(10,10,10,.28);box-shadow:0 20px 40px -28px rgba(10,10,10,.5)}
+.addon-copy{padding:clamp(28px,3.4vw,46px);display:flex;flex-direction:column;justify-content:center}
+.addon-copy .eyebrow{display:block}
+.addon-copy h3{margin-top:16px;font-size:clamp(26px,2.9vw,38px);max-width:16ch}
+.addon-copy .sub{margin-top:14px;font-size:16.5px;color:var(--muted);max-width:46ch}
+.addon-copy .sub b{color:var(--ink);font-weight:600;white-space:nowrap}
+.addon-copy ul{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:9px}
+.addon-copy li{font-size:15px;display:flex;gap:10px;align-items:flex-start;color:var(--muted)}
+.addon-copy li::before{content:"";width:6px;height:6px;background:var(--yellow);margin-top:8px;flex:none}
+.addon-foot{
+  margin-top:26px;padding-top:22px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 28px;
+}
+.addon-price .price{display:flex;align-items:baseline;gap:4px}
+.addon-price .cur{font-size:15px;color:var(--muted);font-weight:500}
+.addon-price .val{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 100;font-weight:700;font-size:34px;letter-spacing:-.02em}
+.addon-price .per{font-size:14px;color:var(--muted)}
+.addon-price .any{display:block;margin-top:4px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.addon-visual{
+  position:relative;background:var(--ink);overflow:hidden;
+  display:flex;align-items:center;justify-content:center;padding:clamp(24px,3vw,40px);
+}
+.addon-visual img{width:100%;max-width:340px;height:auto;max-height:420px;object-fit:contain;display:block}
+.addon-visual .badge{
+  position:absolute;left:0;bottom:0;background:var(--yellow);color:var(--ink);
+  font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  padding:10px 14px;white-space:nowrap;
+}
+.addon-visual .badge span{color:var(--ink);opacity:.55}
+@media(max-width:900px){
+  .addon-card{grid-template-columns:1fr}
+  .addon-visual{order:-1;min-height:250px;padding:20px}
+  .addon-visual img{max-width:260px;max-height:230px}
+  .addon-copy h3{max-width:none}
+}
+@media(max-width:560px){
+  .addon-copy{padding:26px 22px 24px}
+  .addon-foot{flex-direction:column;align-items:stretch}
+  .addon-foot .btn{width:100%}
+  .addon-visual{min-height:220px}
+  .addon-visual img{max-width:220px;max-height:200px}
+  .addon-visual .badge{font-size:9.5px;padding:8px 11px}
+}
+
 /* ---------- diferenciais ---------- */
 .why{background:var(--ink);color:var(--paper)}
 .why .sec-title{color:var(--paper)}
@@ -481,6 +534,40 @@ footer.site{background:var(--ink);color:var(--paper);border-top:1px solid var(--
   </div>
 </section>
 
+<!-- ================= ADICIONAL WI-FI MESH ================= -->
+<section class="addon" id="mesh" aria-labelledby="meshTitle">
+  <div class="wrap">
+    <div class="addon-card rv">
+      <div class="addon-copy">
+        <span class="eyebrow">Adicional <span class="dot">●</span> Wi-Fi Mesh</span>
+        <h3 class="display" id="meshTitle">Seu Wi-Fi pode chegar ainda mais longe.</h3>
+        <p class="sub">Adicione Wi-Fi Mesh ao seu plano por apenas <b>+R$ 29,90/mês</b>.</p>
+        <ul>
+          <li>Maior cobertura do sinal Wi-Fi</li>
+          <li>Mais estabilidade para seus dispositivos</li>
+          <li>Ideal para ambientes maiores e áreas onde o sinal costuma ficar fraco</li>
+          <li>Equipamento Mesh incluso na contratação do adicional</li>
+        </ul>
+        <div class="addon-foot">
+          <div class="addon-price">
+            <div class="price"><span class="cur">+R$</span><span class="val">29,90</span><span class="per">/mês</span></div>
+            <span class="any">Em qualquer plano</span>
+          </div>
+          <a class="btn btn--dark" href="#" data-wa="mesh" data-rjnet-whatsapp="planos_mesh" target="_blank" rel="noopener"><img class="btn-wa" src="whatsapp-icon-white.png" alt="">Adicionar Wi-Fi Mesh <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <div class="addon-visual">
+        <!-- EQUIPAMENTO: para trocar, substitua o arquivo mesh-roteador.svg ou aponte o src
+             para outra imagem (ex.: mesh-roteador.png). Recomendado: PNG/WebP com fundo
+             transparente, ~800px de largura, pois o painel de fundo é preto. -->
+        <img src="mesh-roteador.svg" width="360" height="380" alt="Roteador Wi-Fi Mesh RJNET" loading="lazy" decoding="async">
+        <div class="badge">Equipamento incluso <span>●</span> Instalação RJNET</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= DIFERENCIAIS ================= -->
 <section class="why" id="beneficios">
   <div class="wrap">
@@ -696,7 +783,8 @@ const WHATSAPP = "552434212021"; // 55 + DDD 24 + 3421-2021
 const MSG = {
   cobertura: "Olá! Quero saber se a RJNET atende no meu endereço.",
   yellow: "Olá! Quero contratar o pacote Apps Yellow da RJNET (R$ 15,00/mês).",
-  black: "Olá! Quero contratar o pacote Apps Black da RJNET (R$ 30,00/mês)."
+  black: "Olá! Quero contratar o pacote Apps Black da RJNET (R$ 30,00/mês).",
+  mesh: "Olá! Quero adicionar o Wi-Fi Mesh (+R$ 29,90/mês) ao meu plano RJNET."
 };
 
 /* destaque:false -> plano de entrada, exibido como linha discreta abaixo dos cards */
